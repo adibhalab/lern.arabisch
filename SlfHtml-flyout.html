@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+	color: var(--blue4);
+}
+
+.js nav ul {
+	display: none;
+}
+
+.js nav ul.is-active {
+	display: block;
+}
+
+nav li {
+	list-style: none;
+	margin-bottom: 0.25em;
+	text-decoration: none;
+}
+
+a:hover,
+a:focus {
+	color: var(--yellow);
+}
+
+[aria-expanded] {
+	width: 2em;
+	height: 2em;
+	background: transparent;
+	color: transparent;
+	outline: transparent;
+	border: none;
+	background-image: url(./images/MenuOpen.svg);
+}
+
+[aria-expanded="true"] {
+	background-image: url(./images/MenuClose.svg);
+}
+
+:root {
+	--blue: #337599;
+	--blue4: #adc8d6;
+	--black: #113;
+	--red: #c82f04;
+	--yellow: #dfac20;
+	--yellow3: #f9eed2;
+	--green3: #d4e3b5;
+}
+
+body {
+	background: var(--black);
+	font-family: 'Arial', sans-serif;
+	padding: 1em;
+	max-width: 40em;
+	color: white;
+}
+
+h1 img {
+	width: 2em;
+	vertical-align: bottom;
+}
+
+h1 {
+	color: var(--yellow3);
+}
+
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+	const root = document.documentElement,
+		toggle = document.querySelector('#toggle'),
+		menu = document.querySelector('#menu');
+	root.classList.add('js');
+	toggle.addEventListener('click', function () {
+		if (menu.classList.contains('is-active')) {
+			this.setAttribute('aria-expanded', 'false');
+			menu.classList.remove('is-active');
+		} else {
+			menu.classList.add('is-active');
+			this.setAttribute('aria-expanded', 'true');
+		}
+	});
+});
+
+    </script>
+</head>
+<body>
+    <header>
+
+       <img src="./images/output3.svg" alt="logo">
+	   <img src="./images/logo-arabionline_de.svg" alt="logo_de">
+	   <img src="./images/logo-arabionline_ar.svg" alt="logo_ar">
+	   <h1>
+        OnePager mit Flyout-Menü
+      </h1>
+        <nav>
+            <button id="toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+            <ul id="menu">
+                <li><a aria-current="page">Home</a>
+                </li>
+                <li><a href="#">Seite 2</a>
+                </li>
+                <li><a href="#">Seite 3</a>
+                </li>
+                <li><a href="#">Seite 4</a>
+                </li>
+                <li><a href="#">Kontakt</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Flyout-Menü mit toggle-Button</h2>
+        <p>Um Platz für Inhalte zu schaffen, soll die Navigation nur bei Bedarf eingeblendet
+            werden. Deshalb erweitern wir unsere Flyout-Navigation um einen toggle-Button.</p>
+        <ol>
+            <li>Im Grundzustand ohne CSS ist alles sichtbar - der Button ist <strong>ohne</strong>			Funktion.</li>
+            <li>Mit CSS wird die Seite gestaltet und der Button ausgeblendet.
+                <br>Die Navigation ist bedienbar, aber immer sichtbar!</li>
+            <li>In dieser Version ist nur ein Navicon sichtbar - erst ein Klick auf dieses öffnet
+                das Menü.</li>
+        </ol>
+    </main>
+    
+</body>
+</html>

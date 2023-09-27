@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="135" height="125" viewBox="0 0 135 125">
+            <style>
+        path {
+            fill: none;
+            stroke: #a0aa0c;
+            stroke-width: 3;
+        }
+
+        #kreis1 {
+            fill: none;
+            stroke: none;
+            stroke-width: 3;
+        }
+
+        #circle1 {
+            fill: rgb(233, 163, 33);
+            stroke: rgb(243, 243, 116);
+            stroke-width: 30;
+        }
+
+
+        .h1 {
+            font-size: 18px;
+            font-weight: normal;
+            fill: rgb(9, 114, 9);
+            stroke: none;
+            stroke-width: 1;
+        }
+
+        .schreib {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            font-weight: normal;
+            letter-spacing: 2px;
+        }
+    </style>
+<!--Path Kommando: a rx,ry,phi lf sf x,y 
+            rx und ry Achsen, Phi ist der Winkel zwischen rx und ry (Bei rx=ry spielt phi keine Rolle)
+            lf=1 der kleiner Bogen vom Ausgang- zum Endpunkt > 180 Grand, lf=0 der größere Bogen > 180 Grad, 
+            sf=1 Bogenverlauf vom Ausgangspunkt positive Richtung (text-außen), sf=0 entsprechend negativ 
+            (text-innen)
+    -->
+        <!-- 600px und 450px gibt den viewport an, 0-Koordinaten in der oberen linken Ecke(0,0))
+    viewBox ist ein Abschnitt von Viewport synthax: min-x, min-y breite, höhe und erstellt ein neues KS
+    -->
+
+        <svg>
+            <!--viewBox="0 0 300 150"-->
+
+
+            <!--die nächsten Polygonpunkte gehen mit relativen Koordinaten von Endpunkt, daher
+                0,0 wäre der Ausgangspunkt vom Bogen. 0,0 liefert fehlerhaftes Ergebnis, deshalb 1px
+                vorher halten mit zu Bogen schließen-->
+            <circle id="circle1" cx="75" cy="65" r="40" />
+            <path id="kreis1" d="M 30,65 a 45,45 0 1 1 0,1 z" /><!--mit z wird die Lücke geschlossen-->
+
+
+            <!--Das defs-Element legt einen Definitionsabschnitt fest, der 
+                    vom Browser nicht dargestellt wird.-->
+            <g transform="translate(0, 0)">
+                <text>
+                    <!--
+                    animateTransformElement animiert SVG-Transformationen.       
+            Die 3 Werte im from- und to-Attribut geben Winkelmaß und Mittelpunkt der Drehung an.
+                -->
+
+
+                    <animateTransform attributeName="transform" type="rotate" from="360 75 65" to="0 75 65 " begin="0"
+                        dur="30" repeatCount="indefinite" />
+
+                    <textPath class="schreib" href="#kreis1" fill="green">Arabisch von 0 auf 100***
+                    </textPath>
+
+                </text>
+            </g>
+            <text>
+                <tspan class="h1" x="75" y="50" text-anchor="middle">العربية </tspan>
+                <tspan class="h1" x="75" y="70" text-anchor="middle">من 0</tspan>
+                <tspan class="h1" x="75" y="90" text-anchor="middle">إلى 100</tspan>
+            </text>
+        </svg>
+
+</svg>

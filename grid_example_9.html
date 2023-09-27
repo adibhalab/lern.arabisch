@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example_9</title>
+    <style>
+        body {
+            border: thin solid red;
+        }
+
+        ul {
+        display: grid;
+        gap: 1em;
+            border: thick dotted black;
+        }
+
+        li {
+            display: grid;
+            grid-template-columns: 5em
+            1fr ;
+            border: thick solid lightblue;
+        }
+
+        label {
+            border: thick solid yellow
+        }
+
+        input {
+            border: thick solid orange;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><label>Name:</label> <input title=fn>
+        <li><label>Address:</label> <input title=address>
+        <li><label>Phone:</label> <input title=phone>
+    </ul>
+</body>
+
+</html>

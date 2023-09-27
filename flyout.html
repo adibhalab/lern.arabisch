@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Flyout-Menü</title>
+	<style>
+		a {
+			color: blueviolet;
+		}
+
+		.js nav ul {
+			display: none;
+		}
+
+		.js nav ul.is-active {
+			display: block;
+		}
+
+		nav li {
+			list-style: none;
+			margin-bottom: 0.25em;
+			text-decoration: none;
+		}
+
+		a:hover,
+		a:focus {
+			color: rgb(218, 50, 20);
+		}
+
+		[aria-expanded] {
+			width: 2em;
+			height: 2em;
+			background: transparent;
+			color: transparent;
+			outline: transparent;
+			border: none;
+			background-image: url(./images/MenuOpen.svg);
+		}
+
+		[aria-expanded="true"] {
+			background-image: url(./images/MenuClose.svg);
+		}
+
+		body {
+			background: antiquewhite;
+			height: 100vh;
+			font-family: 'Arial', sans-serif;
+			padding: 1em;
+			max-width: 40em;
+			border: thin solid green;
+
+		}
+		
+	</style>
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			const root = document.documentElement,
+				toggle = document.querySelector('#toggle'),
+				menu = document.querySelector('#menu');
+			root.classList.add('js');
+			toggle.addEventListener('click', function () {
+				if (menu.classList.contains('is-active')) {
+					this.setAttribute('aria-expanded', 'false');
+					menu.classList.remove('is-active');
+				} else {
+					menu.classList.add('is-active');
+					this.setAttribute('aria-expanded', 'true');
+				}
+			});
+		});
+
+	</script>
+</head>
+
+<body>
+	<nav>
+		<button id="toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+		<ul id="menu">
+			<li><a aria-current="page">Home</a>
+			</li>
+			<li><a href="#">Seite 2</a>
+			</li>
+			<li><a href="#">Seite 3</a>
+			</li>
+			<li><a href="#">Seite 4</a>
+			</li>
+			<li><a href="#">Kontakt</a>
+			</li>
+		</ul>
+	</nav>
+
+</body>
+
+</html>

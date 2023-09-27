@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example_10</title>
+    <style>
+        body {
+            display: flexbox;
+            grid: "header header header"
+                "main main main"
+                "foot foot foot" 100vh / auto 1fr 1fr;
+        }
+
+        main {
+            grid-area: main;
+            display: grid;
+            grid: "nav article article";
+            grid-template-columns: 1fr auto auto;
+        }
+
+        nav {
+            grid-area: nav;
+            max-width: 8em;
+            border: thin solid blue;
+            grid-column: 1;
+        }
+
+        article {
+
+            grid-area: article;
+            border: thin solid blue;
+        }
+
+        header {
+            grid-area: header;
+            display: flex;
+            grid-template-columns: 10em 15em 15em 1fr;
+            gap: 2em;
+            border: thin solid red;
+        }
+
+        #log1 {
+            border: thin solid blue;
+            justify-self: left;
+        }
+
+        #de_log,
+        #ar_log {
+            align-self: center;
+            justify-self: left;
+            border: thin solid blue;
+        }
+
+        #txt_log {
+            align-self: center;
+            justify-self: right;
+            color: red;
+            border: thin solid blue;
+        }
+
+        footer {
+            grid-area: foot;
+            display: grid;
+            gap: 1em;
+            grid-template-columns: 1fr auto;
+            border: thick solid green;
+            align-self: center;
+        }
+
+        #copyright {
+            border: thin solid blue;
+        }
+
+        #disclaimer {
+            border: thin solid blue;
+        }
+        @media all and (max-width: 60em) {
+  /* Too narrow to support three columns */
+  body { display: block; }
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <img id="log1" src="./images/output3.svg" alt="logo">
+        <img id="de_log" src="./images/logo-arabionline_de.svg" alt="logo">
+        <img id="ar_log" src="./images/logo-arabionline_ar.svg" alt="logo">
+        <span id="txt_log">
+            <h3 class="h3_ausnahme">Arabisch für Deutschprechende</h3>
+            <h3>تعليم العربية للمتحدثين بالألمانية</h3>
+        </span>
+    </header>
+
+    <main>
+        <nav>
+            <p><a href="index.html">
+                    <act>StartSeite</act>
+                </a></p>
+            <p><a href="about/wir.html">Wer sind wir?</a></p>
+            <p><a href="ar_kurs/ar_kurs.html">ArabischKurs</a></p>
+            <p><a href="contact/contact.html">Kontakt</a></p>
+
+        </nav>
+
+        <article>
+<p>Was gibt es an schöne Sachen</p>
+            <!--Beginn Inhalt
+    <div class="content"> -->
+            <figure>
+                <img class="px-img" width="80%" src="images/Alfatiha.jpg" alt="banner" width="100%"
+                    title="Koran Exemplar mit arabischer Handschrift/Marokko, Erscheinungsjahr 1306">
+                <figcaption>
+                    <h4>Koran Exemplar mit arabischer Handschrift/Marokko, Erscheinungsjahr 1306</h4>
+
+                    Quelle: Bayrischer Staatsbibliothek: Oriental Treasures
+                    www.muenchener-digitalisierungszentrum.de
+                </figcaption>
+            </figure>
+            <!--</div>	
+    Ende Inhalt -->
+
+        </article>
+    </main>
+
+    <footer>
+        <p id="disclaimer"><a href="disclaimer/disclaimer.html">Disclaimer:</a></p>
+        <p id="copyright"> Copyright © 2013 arabi-online.de</p>
+    </footer>
+
+</body>
+
+</html>

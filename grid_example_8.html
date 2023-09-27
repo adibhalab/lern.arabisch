@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 8</title>
+</head>
+<style>
+    #grid {
+        /*hier wird das Netz erstellt*/
+        display: grid;
+        gap: 1em;
+
+        /*GridDeklaration*/
+        grid-template-columns: 150px 150px;
+        grid-template-rows: 50px 50px 50px;
+        height: 100vh;
+        /* Mit grid-template-areas gibt man Zellen Namen, so ist hier c erstte Zeille erste Spalte  und Punkt (.) bedeutet keine Bennung */
+        grid-template-areas:
+            "c a"
+            ". a"
+            "b d";
+    }
+
+    /* Zuweisung eine GridElements zu einer GridArea */
+    #ctrls1 {
+        grid-area: a;
+        background-color: antiquewhite;
+    }
+
+    #board {
+        grid-area: d;
+        background-color: aquamarine;
+        justify-self: center;
+        /*horizontal Zentrieren */
+        align-self: self-end;
+        /* vertikal unten */
+    }
+
+    #score1 {
+        grid-area: c;
+        background-color: cadetblue;
+    }
+
+    /*hier werden die Items erstellt, sonst bleibt jedes item in einer Rasterzelle*/
+    /* Positionierung von GridElementen durch Anwendung von GridArea
+    Koordinaten: grid-row-start/grid-column-start/grid-row-end/grid-column-end bzw. hier span oder auto ist möglich*/
+    #title {
+        grid-area: 1 / 2 / auto / span 5;
+    }
+
+    /*
+    #ctrls1 {
+        grid-column-start: 2;
+        grid-column-end: 5;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }*/
+
+    #grid1 {
+        /*hier wird das Netz erstellt*/
+        display: grid;
+        gap: 1em;
+
+        /*GridDeklaration mit GridLines Namensgebung
+    Linie1V 150px  Linie2V 1fr, Linie3V bei 2 Spalten.
+    Linie1H 50px Linie2H 1fr Linie3H 50px Linie4H bei 3 Zeilen*/
+        grid:
+            "logo titel1 titel2" 30px "z21 z21 z23" 50px "f f f" 100vh / 1fr 150px 1fr;
+    }
+
+    /* Positionierung von GridElementen durch Anwendung von explizit benannten GridLines*/
+    #title2 {
+        grid-area: logo;
+        background-color: bisque;
+    }
+
+    #score3 {
+        grid-area: titel2;
+        background-color: brown;
+    }
+
+    #stats3 {
+        grid-area: titel1;
+        background-color: aquamarine;
+        text-align: center;
+    }
+
+    #board3 {
+        grid-area: f;
+        background-color: chartreuse;
+    }
+
+    #ctrls3 {
+        grid-area: z21;
+        background-color: darkorange;
+        justify-self: center;
+        align-self: center;
+    }
+
+    * {
+        border: thin solid orange;
+    }
+
+    #grid1 {
+        border: thick solid green;
+    }
+
+    #grid {
+        border: thick solid blue;
+    }
+</style>
+
+<body>
+    <main>
+        <section1 id="grid">
+            <div id="title">Spiel der Katze und Maus</div>
+            <div id="score">Score</div>
+            <div id="stats">Stats</div>
+            <div id="board">Board</div>
+            <div id="ctrls">Ctrls</div>
+            <div id="score1">Score1</div>
+            <div id="stats1">Stats1</div>
+            <div id="board1">Board1</div>
+            <div id="ctrls1">Ctrls1</div>
+        </section1>
+        <section2 id="grid1">
+            <div id="title2">2. Spiel der Katze und Maus</div>
+            <div id="score2">Score2</div>
+            <div id="stats2">Stats2</div>
+            <div id="board2">Board2</div>
+            <div id="ctrls2">Ctrls2</div>
+            <div id="score3">Score3</div>
+            <div id="stats3">Stats3</div>
+            <div id="board3">Board3</div>
+            <div id="ctrls3">Ctrls3</div>
+        </section2>
+    </main>
+</body>
+
+</html>

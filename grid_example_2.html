@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example 1</title>
+    <style>
+        /**
+ *Definieren der Position jedes GridElements durch Definition von grid-areas
+ * Ziel: Unterschiedliches Layout für Portrait und Landscape
+ */
+        @media (orientation: portrait) {
+            #grid {
+                display: grid;
+                display: grid;
+                gap: 1em;
+                text-align: center;
+                /* Durch die Eigenschaft grid-template-areas definiere visuell die Zeilen, Spalten und 
+    *  die Areas (Bereiche).
+    * Jeder String (zwischen "") ist eine Zeile und jedes Wort im String stellt eine Spalte dar
+    */
+                grid-template-areas:
+                    "title stats"
+                    "score stats"
+                    "board board"
+                    "ctrls ctrls";
+
+                /* Die Größe von Spalten und Zeilen werden durch die Eigenschaften:display: 
+    * grid-template-columns and grid-template-rows definiert.
+    
+    * Two columns:
+   *  1. Die erste Spalte wird ihre Größe durch den Inhalt bestimmt (auto),
+   *  2. Die zweite bekommt den restlichen Plaz, Niemals aber kleiner als
+   *     der Platz, der vom game board oder game-steuerung, die diese Spalte besetzen [Figure 4]
+
+   * vier rows:
+   *  3. Die erste und die zweite Zeile wird deren Größe durch den Inhalt bestimmt (auto),
+   *  4. Die dritte Zeile bekomt den restlichen Platz
+   *     (aber nimals kleiner als die Minimum-Höhe des Game-board oder der Statitikbereiches)
+   *  5. Die Größe (Höhe) der letzen Zeile wird durch den Inhalt bestimmt (auto).
+   */
+                grid-template-columns: auto 1fr;
+                grid-template-rows: auto auto 1fr auto;
+
+            }
+        }
+
+        @media (orientation: landscape) {
+            #grid {
+                display: grid;
+                gap: 1em;
+                text-align: center;
+
+                grid-template-areas:
+                    "title board"
+                    "stats board"
+                    "score ctrls";
+
+                grid-template-columns: auto 1fr;
+                grid-template-rows: auto 1fr auto;
+            }
+        }
+
+        /* Die Eigenschaftt grid-area setzt ein GridElement (z. B. #title) in den benannten area des GridElements.*/
+
+        #title {
+            grid-area: title
+        }
+
+        #score {
+            grid-area: score
+        }
+
+        #stats {
+            grid-area: stats
+        }
+
+        #board {
+            grid-area: board
+        }
+
+        #ctrls {
+            grid-area: ctrls
+        }
+
+        #title,
+        #score,
+        #stats,
+        #board,
+        #ctrls {
+            border: thick solid cornflowerblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="grid">
+        <div id="title">Game Title</div>
+        <div id="score">Score</div>
+        <div id="stats">Stats</div>
+        <div id="board">Board</div>
+        <div id="ctrls">Controls</div>
+    </div>
+</body>
+
+</html>

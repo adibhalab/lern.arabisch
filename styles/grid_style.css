@@ -1,0 +1,48 @@
+/* Position und Größe eines GridElements festlegen
+grid-column und grid-row */
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 1em;
+    border: thin solid;
+    border-color: blue;
+}
+ge1,
+ge2,
+ge3,
+ge4,
+ge5,
+ge6,
+ge7,
+ge8,
+ge9
+ {
+
+    border: 0.2em solid;
+    border-color: red;  
+}
+
+body > ge5 {
+    background-color: rgb(208, 247, 234);
+    margin-bottom: 2em;
+    border-radius: 2em;
+    text-align: center; /*zentriert den Text*/
+}
+body > ge4 {
+    background-color: rgb(247, 213, 208);
+    margin-top: 2em;
+    border-radius: 2em;
+   /*  align-self: center;   zentriert das GridElement vertikal, default eingestellt*/
+   justify-self: center; /* zentriert das GridElement horizontal und zieht sich zusammen um den Text */ 
+}
+
+
+/*RasterElementen-Länge in Anzahhl von Spalten als Maßstab festlegen*/
+ge1, ge5, ge9{
+    grid-column: 2/4; /*RasterElement ge1 vergrößert sich um 3 Spalten, die restl. RasterElemente verschieben sich weiter*/
+}
+ge1 {
+    grid-row: 2 / 4; /*Die Position von ge1 geändert */
+}

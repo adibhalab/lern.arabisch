@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 6</title>
+</head>
+<style>
+    #grid {
+        /*hier wird das Netz erstellt*/
+        display: grid;
+        gap: 1em;
+
+        /*GridDeklaration*/
+        grid-template-columns: 150px 150px;
+        grid-template-rows: 50px 50px 50px;
+    }
+
+    /*hier werden die Items erstellt, sonst bleibt jedes item in einer Rasterzelle*/
+    /* Positionierung von GridElementen durch Anwendung von GridLine-Nummern*/
+    #title {
+        grid-column: 1/-1;
+        grid-row: 1/3;
+    }
+
+    #ctrls1 {
+        grid-column-start: 2;
+        grid-column-end: 5;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+
+    #grid1 {
+        /*hier wird das Netz erstellt*/
+        display: grid;
+        gap: 1em;
+
+        /*GridDeklaration mit GridLines Namensgebung
+    Linie1V 150px  Linie2V 1fr, Linie3V bei 2 Spalten.
+    Linie1H 50px Linie2H 1fr Linie3H 50px Linie4H bei 3 Zeilen*/
+        grid-template-columns:[v-0] 200px [v-1] 150px [v-2] 1fr [v-3];
+        grid-template-rows:  [h-0] 150px [h-1] 100px [h-2] 1fr [h-3];
+    }
+
+    /* Positionierung von GridElementen durch Anwendung von explizit benannten GridLines*/
+    #title2 {
+        grid-column: v-0/v-1;
+        grid-row: h-0/h-2;
+    }
+
+    #stats3 {
+        grid-column: v-1/v-2;
+        grid-row: h-0/h-2;
+    }
+
+    * {
+        border: thin solid orange;
+    }
+
+    #grid1 {
+        border: thick solid green;
+    }
+
+    #grid {
+        border: thick solid blue;
+    }
+</style>
+
+<body>
+    <main>
+        <section1 id="grid">
+            <div id="title">Spiel der Katze und Maus</div>
+            <div id="score">Score</div>
+            <div id="stats">Stats</div>
+            <div id="board">Board</div>
+            <div id="ctrls">Ctrls</div>
+            <div id="score1">Score1</div>
+            <div id="stats1">Stats1</div>
+            <div id="board1">Board1</div>
+            <div id="ctrls1">Ctrls1</div>
+        </section1>
+        <section2 id="grid1">
+            <div id="title2">2. Spiel der Katze und Maus</div>
+            <div id="score2">Score2</div>
+            <div id="stats2">Stats2</div>
+            <div id="board2">Board2</div>
+            <div id="ctrls2">Ctrls2</div>
+            <div id="score3">Score3</div>
+            <div id="stats3">Stats3</div>
+            <div id="board3">Board3</div>
+            <div id="ctrls3">Ctrls3</div>
+        </section2>
+    </main>
+</body>
+
+</html>

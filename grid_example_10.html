@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example_10_Original</title>
+    <style>
+        body {
+            display: grid;
+            grid:
+                "header header header"
+                "nav    main    aside"
+                "footer footer  footer"
+                /auto 1fr 20%;
+        }
+
+        * {
+            border: thin solid green;
+        }
+
+        header {
+            grid-area: header;
+            /* auto min-width */
+        }
+
+        nav {
+            grid-area: nav;
+            /* auto min-width */
+        }
+
+        main {
+            grid-area: main;
+            min-width: 12em;
+        }
+
+        aside {
+            grid-area: aside;
+            min-width: 12em;
+        }
+
+        footer {
+            grid-area: footer;
+            /* auto min-width */
+        }
+
+        #alfatiha {
+            border: thick solid red;
+        }
+
+        @media all and (max-width: 60em) {
+
+            /* Too narrow to support three columns */
+            body {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img id="log1" src="./images/output3.svg" alt="log1">
+    </header>
+    <nav>
+        <p><a href="index.html">
+                <act>StartSeite</act>
+            </a></p>
+        <p><a href="about/wir.html">Wer sind wir?</a></p>
+        <p><a href="ar_kurs/ar_kurs.html">ArabischKurs für Anfänger</a></p>
+        <p><a href="contact/contact.html">Kontakt</a></p>
+    </nav>
+    <main>
+        <p>Wir versuchen hier etwas zu lernen, damit wir
+            a- besser werden und
+            b- noch besser werden.
+        </p>
+        <img id="alfatiha" src="./images/Alfatiha.jpg" alt="alfatiha" width="60%">
+    </main>
+    <aside>
+        <h1>News from today</h1>
+        <p>قام الثوار باعتقال المجرم بشار</p>
+    </aside>
+    <footer>
+        <p id="disclaimer"><a href="disclaimer/disclaimer.html">Disclaimer:</a></p>
+        <p id="copyright"> Copyright © 2013 arabi-online.de</p>
+    </footer>
+</body>
+
+</html>

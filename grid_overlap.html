@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #grid {
+           min-height: 100vh; /* wird auf der ganzen Seite verteilt*/
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            border: thick solid;
+            border-color: yellow;
+        }
+
+        #A {
+            grid-column: 1 / span 2;
+            grid-row: 2;
+            align-self: end;
+            border: thick solid; /*Diese Eigenschaft muss vor border-color stehen!*/
+            border-color: red;
+            background-color: blue;
+        }
+
+        #B {
+            grid-column: 1;
+            grid-row: 1;
+            z-index: 10;
+            border: thick solid;
+            border-color: green;
+            background-color:blueviolet;
+        }
+
+        #C {
+            grid-column: 2;
+            grid-row: 1;
+            align-self: start;
+            margin-left: -20px;
+            border: thick solid;
+            border-color: brown;
+            background-color: orange;
+        }
+
+        #D {
+            grid-column: 2;
+            grid-row: 2;
+            justify-self: end;
+            align-self: start;
+            border: thick solid;
+            border-color: red;
+            background-color: green;
+        }
+
+        #E {
+            grid-column: 1 / span 2;
+            grid-row: 1 / span 2;
+            z-index: 5;
+            justify-self: center;
+            align-self: center;
+            border: thick solid;
+            border-color: rgb(250, 133, 133);
+            background-color: red;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="grid">
+        <div id="A">A
+            <p>Grid Layout ist wie Flexbox eine sehr moderne und einfache Möglichkeit, responsive
+                und flexible Layouts zu erstellen, ohne feste Größenangaben und weitere CSS-Einstellungen
+                wie position, float oder clear nutzen zu müssen. </p>
+            <p>Dabei können Elemente beliebig innerhalb eines Rasters platziert werden, wenn gewünscht,
+                auch übereinander. </p> <h1>GutenMorgen</h1></div>
+        <div id="B">B
+            <p>Grid Layout ist wie Flexbox eine sehr moderne und einfache Möglichkeit, responsive
+                und flexible Layouts zu erstellen, ohne feste Größenangaben und weitere CSS-Einstellungen
+                wie position, float oder clear nutzen zu müssen. </p>
+            <p>Dabei können Elemente beliebig innerhalb eines Rasters platziert werden, wenn gewünscht,
+                auch übereinander. </p>
+        </div>
+        <div id="C">C
+            <p>Grid Layout ist wie Flexbox eine sehr moderne und einfache Möglichkeit, responsive
+                und flexible Layouts zu erstellen, ohne feste Größenangaben und weitere CSS-Einstellungen
+                wie position, float oder clear nutzen zu müssen. </p>
+            <p>Dabei können Elemente beliebig innerhalb eines Rasters platziert werden, wenn gewünscht,
+                auch übereinander. </p>
+        </div>
+        <div id="D">D
+            <p>Grid Layout ist wie Flexbox eine sehr moderne und einfache Möglichkeit, responsive
+                und flexible Layouts zu erstellen, ohne feste Größenangaben und weitere CSS-Einstellungen
+                wie position, float oder clear nutzen zu müssen. </p>
+        </div>
+        <div id="E">E
+            <p>Grid Layout ist wie Flexbox eine sehr moderne und einfache Möglichkeit, responsive
+                und flexible Layouts zu erstellen, ohne feste Größenangaben und weitere CSS-Einstellungen
+                wie position, float oder clear nutzen zu müssen. </p>
+            <p>Dabei können Elemente beliebig innerhalb eines Rasters platziert werden, wenn gewünscht,
+                auch übereinander. </p>
+        </div>
+    </div>
+</body>
+
+</html>

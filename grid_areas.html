@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRID_01</title>
+<style>
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: fit-content(12em) minmax(10em, 1fr);
+    grid-template-rows: 1fr min-content;
+    gap: 1em;
+    border: thin solid;
+    border-color: blue;
+    background-color: chartreuse;
+        /* Um ein area zu bilden, muss der Bereich eines GridElements zusammenhängen,
+    d.h heißt GE1 GE3 GE1 geht nicht. Die Spaltenanzahl muss gleich sein.*/
+    grid-template-areas: "head head"
+    "menue GE9" 
+   "menue main"
+   "foot foot";
+}
+ge1,
+ge2,
+ge3,
+ge4,
+ge5,
+ge6,
+ge7,
+ge8,
+ge9
+ {
+
+    border: 0.2em solid;
+    border-color: black;  
+}
+ge1 {background-color: red;}
+ge2 {background-color: blue;}
+ge3 {background-color: yellow;}
+ge4 {background-color: gray;}
+ge5 {background-color: orange;}
+ge6 {background-color: brown;}
+ge7 {background-color: lightblue;}
+ge8 {background-color: green;}
+ge9 {background-color: lightgreen;}
+
+
+@media (min-width: 45em) {
+    body {
+    gap: 1em;
+    border: thin solid;
+    background-color: bisque;
+    border-color: rgb(195, 153, 54);
+    grid-template-columns: 1fr fit-content(12em) minmax(10em, 1fr);
+    grid-template-rows: min-content 1fr min-content;
+    grid-template-areas: "head head head GE8"
+    "menue GE9 GE9 GE9" 
+   "menue main main aside"
+   "foot foot foot foot"; 
+}
+    
+}
+
+/* Namensgebung der einzelnen Zellen, damit diese in grid-template-areas angesprochen werden. */
+ge1 {
+    grid-area: head;
+} 
+ge2 {
+    grid-area: menue;
+} 
+ge3 {
+    grid-area: main;
+}
+ge4 {
+    grid-area: aside;
+}
+ge5 {
+    grid-area: foot;
+}
+ge6 {
+    grid-area: GE6;
+}
+ge7 {
+    grid-area: GE7;
+}
+ge8 {
+    grid-area: GE8;
+}
+ge9 {
+    grid-area: GE9;
+}
+
+</style>
+</head>
+<body>
+<!--Name der Markups darf nicht mit einer Zahl beginnen-->
+    <ge1>
+        <h1>ge1-11</h1>
+        <p>Dabei können Elemente beliebig innerhalb eines Rasters platziert werden, wenn gewünscht,
+            auch übereinander. </p>
+
+    </ge1>
+    <ge2>
+        <h1>ge2-12</h1>
+        <p>Grid Layout wird in allen modernen Browsern unterstützt.</p>
+    </ge2>
+    <ge3>
+        <h1>ge3-13</h1>
+    </ge3>
+    <ge4>
+        <h1>ge4-21</h1>
+        <h2>CSS-basierte Grid Layouts</h2>
+        <p>Grid Layout ist wie Flexbox eine sehr moderne und einfache Möglichkeit, responsive
+         </p>
+
+    </ge4>
+    <ge5>
+        <h1>ge5-22</h1>
+    </ge5>
+    <ge6>
+        <h1>ge6-23</h1>
+    </ge6>
+    <ge7>
+        <h1>ge7-31</h1>
+        <p>   und flexible Layouts zu erstellen, ohne feste Größenangaben und weitere CSS-Einstellungen
+            wie position, float oder clear nutzen zu müssen. </p>
+    </ge7>
+    <ge8>
+        <h1>ge8-32</h1>
+    </ge8>
+    <ge9>
+        <h1>ge9-33</h1>
+    </ge9>
+</body>
+</html>

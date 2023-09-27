@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 5</title>
+</head>
+<style>
+    main {
+        display: grid;
+        gap: 5em; /*hat keine Auswirkung*/
+        border: thin solid cornflowerblue;
+
+  grid: auto-flow 1fr / repeat(auto-fill, 5em);
+  min-height: 100vh;
+  justify-content: space-between;
+  align-content: safe center;
+}
+#title,
+        #score,
+        #stats,
+        #board,
+        #ctrls {
+            border: thick solid rgb(41, 231, 127);
+        }
+</style>
+<body>
+    <main>
+    
+        <div id="grid">
+            <div id="title">Spiel der Katze und Maus</div>
+            <img src="../testN/images/output3.svg" alt="logo"/>
+            <div id="score">Score</div>
+            <img src="../testN/images/Logo_ar_de.svg" alt="logo"/>
+            <div id="stats">Stats</div>
+            <img src="../testN/images/Zidatelle.JPG" alt="Zitadelle"/>
+            <div id="board">Board</div>
+            <img src="../arabi-online.de/ar_kurs/ar_schuelerwerke/img/IMG_1351.JPG" alt="img1"/>
+            <div id="ctrls">Controls</div>
+        </div>
+    </body>
+    </main>
+    
+</body>
+</html>

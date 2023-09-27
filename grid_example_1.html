@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example 1</title>
+    <style>
+        /**
+/**
+ *Definieren der Position jedes GridElements durch Deklaration des Netzes im Netzcontainer.
+ */
+
+  /**
+   * Two columns:
+   *  1. Die erste Spalte wird ihre Größe durch den Inhalt bestimmt (auto),
+   *  2. Die zweite bekommt den restlichen Plaz, Niemals aber kleiner als
+   *     der Platz, der vom game board oder game-steuerung, die diese Spalte besetzen [Figure 4]
+
+   * Three rows:
+   *  3. Die erste Zeile wird deren Größe durch den Inhalt bestimmt (auto),
+   *  4. Die mittlere Zeile bekomt den restlichen Platz
+   *     (aber nimals kleiner als die Minimum-Höhe des Game-board oder der Statitikbereiches)
+   *  5. Die Größe (Höhe) der letzen Zeile wird durch den Inhalt bestimmt (auto).
+   */
+        #grid {
+            display: grid;
+            min-height: 100vh;
+            grid-template-columns:
+                /* 1 */
+                auto
+                /* 2 */
+                1fr;
+            grid-template-rows:
+                /* 3 */
+                auto
+                /* 4 */
+                1fr
+                /* 5 */
+                auto;
+        }
+
+        /* Positionieren einzelner GridElemmente durch Anwendung der Eigenschaften:
+ * grid-row' and 'grid-column' auf jedes Element.
+ */
+        #title {
+            grid-column: 1;
+            grid-row: 1;
+            border: thin solid chocolate;
+        }
+
+        #score {
+            grid-column: 1;
+            grid-row: 3;
+            border: thin solid chocolate
+        }
+
+        #stats {
+            grid-column: 1;
+            grid-row: 2;
+            align-self: start;
+            border: thin solid chocolate
+        }
+
+        #board {
+            grid-column: 2;
+            grid-row: 1 / span 2;
+            border: thin solid chocolate
+        }
+
+        #controls {
+            grid-column: 2;
+            grid-row: 3;
+            justify-self: center;
+            border: thin solid chocolate
+        }
+
+        /*hoziz. zentriert*/
+    </style>
+</head>
+
+<body>
+    <div id="grid">
+        <div id="title">Game Title</div>
+        <div id="score">Score</div>
+        <div id="stats">Stats</div>
+        <div id="board">Board</div>
+        <div id="controls">Controls</div>
+    </div>
+</body>
+
+</html>
